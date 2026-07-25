@@ -2,28 +2,18 @@
 
 ## Souukou / OpenBluetoothPrinter
 
-The protocol in this repository was derived independently, from HCI snoops of
-the manufacturer's Android app, and verified by rebuilding whole print sessions
-byte for byte. [Souukou/OpenBluetoothPrinter][obp] was found **afterwards**, by
-searching GitHub for the CRC constant. It targets a sibling printer, the
-FlashToy U8, and it named this wire format **YPL** publicly first, which is why
-this library carries that name rather than inventing a second one.
+[Souukou/OpenBluetoothPrinter][obp] is the other public implementation of this
+protocol, targeting the FlashToy U8. They named the wire format **YPL**, and
+that is the name this library uses.
 
-Working separately, they arrived at the same framing, the same status bits, and
-the same non-standard CRC init. Two derivations agreeing on a value like that is
-about as strong as protocol evidence gets.
+Used here, with thanks:
 
-Material taken from their work and used here, with thanks:
-
-- **Every command name** in the command table in `FINDINGS.md`. The captures
-  here proved what the commands _do_; the names are theirs.
+- **The command names** in the command table in `FINDINGS.md`.
 - **Status bits `0x01` (printing), `0x08` (under voltage) and `0x10`
-  (overheat)**, in `STATUS_FLAGS`. Only `0x02` (cover open) and `0x04` (out of
-  paper) were provoked and measured on hardware here.
-- The name **YPL**, and the reading of the `dir` byte, which they call `io`.
+  (overheat)**, in `STATUS_FLAGS`.
+- The reading of the `dir` byte, which they call `io`.
 
-Their project is MIT licensed. Its notice follows in full, as that licence
-requires.
+Their MIT notice follows in full.
 
 [obp]: https://github.com/Souukou/OpenBluetoothPrinter
 
@@ -53,8 +43,6 @@ SOFTWARE.
 
 ## Vendor SDK
 
-`reference/sdk-exports.txt` is `nm`-style symbol output from the vendor's
-`libdnInkPrinter.so`, taken during interoperability analysis. **That binary is
-not redistributed here** and is excluded by `.gitignore`. Symbol names describe
-an interface rather than expressing anything creative, and are reproduced only
-to document how the SDK family was identified.
+`reference/sdk-exports.txt` is `nm` symbol output from the vendor's
+`libdnInkPrinter.so`, kept to document how the SDK family was identified. The
+binary itself is not redistributed here.

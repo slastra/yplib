@@ -135,10 +135,10 @@ vendor's app on the wire.
 
 ## Credits
 
-Derived independently, then found to agree with
+The protocol is named YPL after
 [Souukou/OpenBluetoothPrinter](https://github.com/Souukou/OpenBluetoothPrinter),
-who named the protocol YPL and whose work supplied the command names and three
-status bits used here. See [ACKNOWLEDGEMENTS.md](./ACKNOWLEDGEMENTS.md).
+whose work on the sibling FlashToy U8 supplied the command names and three of
+the status bits used here. See [ACKNOWLEDGEMENTS.md](./ACKNOWLEDGEMENTS.md).
 
 ## Licence
 
