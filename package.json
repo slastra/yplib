@@ -1,0 +1,65 @@
+{
+	"name": "yplib",
+	"version": "0.1.0",
+	"description": "YPL thermal label printer protocol: framing, CRC, 1-bit raster, and a Web Bluetooth transport. Reverse-engineered and verified against hardware captures.",
+	"keywords": [
+		"ypl",
+		"knaon",
+		"y50p",
+		"flashtoy",
+		"thermal-printer",
+		"label-printer",
+		"bluetooth-printer",
+		"web-bluetooth",
+		"reverse-engineering",
+		"raster"
+	],
+	"homepage": "https://github.com/slastra/yplib#readme",
+	"bugs": "https://github.com/slastra/yplib/issues",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/slastra/yplib.git"
+	},
+	"license": "MIT",
+	"author": "Shaun Lastra <shaun@lastra.us>",
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"dist",
+		"src",
+		"README.md",
+		"FINDINGS.md",
+		"ACKNOWLEDGEMENTS.md",
+		"LICENSE"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./web-bluetooth": {
+			"types": "./dist/web-bluetooth.d.ts",
+			"import": "./dist/web-bluetooth.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"types": "./dist/index.d.ts",
+	"main": "./dist/index.js",
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"test": "bun test test",
+		"check": "tsc --noEmit -p tsconfig.json",
+		"lint": "prettier --check .",
+		"format": "prettier --write .",
+		"prepublishOnly": "bun run check && bun run test && bun run build"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.3.14",
+		"@types/web-bluetooth": "^0.0.21",
+		"prettier": "^3.8.3",
+		"typescript": "^6.0.3"
+	},
+	"engines": {
+		"node": ">=18"
+	}
+}

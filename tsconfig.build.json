@@ -1,0 +1,16 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		// Only the Web Bluetooth entry needs DOM types, and it keeps them out of
+		// its public signatures, so nothing here leaks into the emitted .d.ts and
+		// consumers never need @types/web-bluetooth themselves.
+		"types": ["web-bluetooth"],
+		"noEmit": false,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "dist",
+		"rootDir": "src"
+	},
+	"include": ["src/**/*.ts"]
+}

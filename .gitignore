@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.venv/
+__pycache__/
+*.pyc
+label.bin
+
+# vendor SDK binary, extracted from the vendor APK. Never publish.
+reference/*.so

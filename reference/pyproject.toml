@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yplib-reference"
+version = "0.1.0"
+description = "Python reference implementation of the YPL thermal printer protocol"
+requires-python = ">=3.9"
+dependencies = ["pillow"]
+
+[project.optional-dependencies]
+ble = ["bleak"]
+
+[project.scripts]
+y50p = "y50p:main"
+
+[tool.setuptools]
+# Deliberately flat. The protocol (y50p.py), the raster codec (raster.py) and
+# the capture parser (parse_frames.py) are the shipping pieces; solve_*.py are
+# the audit trail for how the checksum was recovered and are not installed.
+py-modules = ["y50p", "raster", "parse_frames"]
