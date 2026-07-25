@@ -2,8 +2,6 @@
 
 [![npm](https://img.shields.io/npm/v/@slastra/yplib)](https://www.npmjs.com/package/@slastra/yplib)
 [![license](https://img.shields.io/npm/l/@slastra/yplib)](./LICENSE)
-![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
-![types](https://img.shields.io/badge/types-included-blue)
 
 **The YPL thermal label printer protocol, in TypeScript.** Framing, CRC, 1-bit
 raster encoding, and a Web Bluetooth transport. No dependencies, no DOM in the
