@@ -5,8 +5,11 @@ raster encoding, and a Web Bluetooth transport. No dependencies, no DOM in the
 core, and every constant verified against hardware captures.
 
 ```bash
-npm install yplib
+npm install @slastra/yplib
 ```
+
+> Published under a scope because npm's typosquatting filter rejects the bare
+> name `yplib` as too close to `otplib`, `zlib` and `tslib`.
 
 YPL is the wire format spoken by a family of cheap white-labelled thermal label
 printers sold as **KNAON**, **FlashToy** and others. It is **not TSPL**, despite
@@ -18,8 +21,8 @@ what the vendor tooling around these devices might suggest. See
 Print a label from a canvas in the browser:
 
 ```ts
-import { buildStream, imageDataToRows } from 'yplib';
-import { connect } from 'yplib/web-bluetooth';
+import { buildStream, imageDataToRows } from '@slastra/yplib';
+import { connect } from '@slastra/yplib/web-bluetooth';
 
 const ctx = canvas.getContext('2d')!; // 400 × 240 for 50 × 30 mm stock
 const rows = imageDataToRows(ctx.getImageData(0, 0, canvas.width, canvas.height));
@@ -31,7 +34,7 @@ await printer.send(buildStream(rows, 50));
 Batch printing, with progress and cancellation:
 
 ```ts
-import { printJob } from 'yplib';
+import { printJob } from '@slastra/yplib';
 
 const ac = new AbortController();
 const printed = await printJob(
@@ -57,7 +60,7 @@ For a full label designer built on this, see
 
 ## API
 
-### Core — `yplib`
+### Core — `@slastra/yplib`
 
 Pure. Runs in browsers, Node, Bun and Deno alike, with no dependencies.
 
@@ -74,7 +77,7 @@ Pure. Runs in browsers, Node, Bun and Deno alike, with no dependencies.
 | `printJob(link, builds, opts?)` / `waitReady(link)` | Job orchestration                                          |
 | `selftest()`                                        | Runs the capture-derived vectors; `[]` means pass          |
 
-### Transport — `yplib/web-bluetooth`
+### Transport — `@slastra/yplib/web-bluetooth`
 
 `connect(options?)` returns a `Link` with `send`, `readStatus`, `disconnect` and
 `deviceName`. Options: `namePrefix` (default `'Y50P'`), `chunkSize` (20),

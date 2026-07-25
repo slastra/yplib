@@ -1,5 +1,5 @@
 {
-	"name": "yplib",
+	"name": "@slastra/yplib",
 	"version": "0.1.0",
 	"description": "YPL thermal label printer protocol: framing, CRC, 1-bit raster, and a Web Bluetooth transport. Reverse-engineered and verified against hardware captures.",
 	"keywords": [
@@ -61,5 +61,8 @@
 	},
 	"engines": {
 		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
