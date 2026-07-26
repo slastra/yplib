@@ -280,12 +280,22 @@ unrelated consumer brands, but they all wrap the same Android SDK:
 
 Known members so far:
 
-| model       | brand                          | evidence                       |
-| ----------- | ------------------------------ | ------------------------------ |
-| **Y50P**    | FlashLabel (`flashlabel.com`)  | this repo, hardware-verified   |
-| **U8**      | KNAON / FlashToy (`knaon.com`) | prior art, hardware-tested     |
-| R4xx family | —                              | prior art, reference work only |
-| R8 family   | —                              | prior art, partial research    |
+| model       | brand                  | BLE profile        | evidence                       |
+| ----------- | ---------------------- | ------------------ | ------------------------------ |
+| **Y50P**    | KNAON                  | `18F0` / 2AF1+2AF0 | this repo, hardware-verified   |
+| **U8**      | FlashToy (`knaon.com`) | `FF00` + FF03 flow | prior art, hardware-tested     |
+| R4xx family | —                      | —                  | prior art, reference work only |
+| R8 family   | —                      | —                  | prior art, partial research    |
+
+⚠️ **The BLE profile is not shared across the family.** Same wire format,
+different transport: the Y50P answers on service `18F0` (write `2AF1`, notify
+`2AF0`), while the U8 uses `FF00` with a separate `FF03` flow-control
+characteristic and a packet credit window. A client hardcoding either one will
+not find the other.
+
+Nor is the geometry shared. The Y50P is a 50 mm label printer; the U8 is
+wide-format, 203.2 dpi, 50–216 mm — wide enough for US Letter. Anything in a
+client that assumes 400 dots is Y50P-specific, not YPL-specific.
 
 ⚠️ **The vendor ID is not the discriminator, and neither is the brand.** Direct
 counter-evidence from this same bench: the **CTP800D is `5958:0130`** — same
