@@ -329,12 +329,11 @@ which is IPP over Wi-Fi, a published standard and nothing like YPL. Between
 AirPrint, TSPL on the Y41, and YPL here, one supplier spans three unrelated
 protocol worlds.
 
-**The driver app is a better filter than the manufacturer.** The vendor lists a
-companion app per product, and that is a much tighter signal than the FCC
-grantee code: a device sold as driven by **FlashLabel** or **FlashToy** is
-running the `com.j0data.sdk` SDK these captures came from. On that basis the
-pocket **P80** (`futureprt.com/products_details/151.html`, "FLash Label APP") is
-a strong YPL candidate without anyone having opened it.
+⚠️ **The driver app is not a discriminator either.** It is tempting to treat the
+companion app as a proxy for the protocol, since **FlashLabel Pro** is what these
+captures were taken from. It does not hold: the same app also drives the CTP800
+units and the **Y813BT**, both of which speak **TSPL**. FlashLabel is a
+multi-protocol client, so "driven by FlashLabel" narrows nothing.
 
 ⚠️ **Sharing a manufacturer does not mean sharing a protocol.** `2A6FW-Y41` is
 certified by this same company, yet the KNAON **Y41BT** was independently found
@@ -342,6 +341,11 @@ to speak **TSPL** (see `cbiffle/raster-tspl-rs` issue 2, where a USB capture
 shows plain `SIZE`/`GAP`/`BITMAP` commands). One ODM, two protocol families.
 Treat the catalogue as a list of _candidates_, never as a compatibility list —
 the wire format below is the only thing that settles it.
+
+**Every proxy has failed.** Brand, manufacturer, USB vendor ID, BLE service UUID
+and companion app have each been tried and each covers both protocol families.
+Nothing about a device's packaging, listing or software identifies YPL. Only the
+bytes on the wire do.
 
 **A reliable test.** Any of these settles it in seconds:
 
