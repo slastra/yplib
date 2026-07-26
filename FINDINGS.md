@@ -315,6 +315,13 @@ include `Y50P`, `U8`, `A80`, `C80`, `M50`, `S1`, `Y12P`, `Y41`, `Y813BT` and
 spanning label makers, 80 mm units, A4 mobile printers and tattoo stencil
 printers.
 
+**The driver app is a better filter than the manufacturer.** The vendor lists a
+companion app per product, and that is a much tighter signal than the FCC
+grantee code: a device sold as driven by **FlashLabel** or **FlashToy** is
+running the `com.j0data.sdk` SDK these captures came from. On that basis the
+pocket **P80** (`futureprt.com/products_details/151.html`, "FLash Label APP") is
+a strong YPL candidate without anyone having opened it.
+
 ⚠️ **Sharing a manufacturer does not mean sharing a protocol.** `2A6FW-Y41` is
 certified by this same company, yet the KNAON **Y41BT** was independently found
 to speak **TSPL** (see `cbiffle/raster-tspl-rs` issue 2, where a USB capture
