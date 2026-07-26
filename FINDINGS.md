@@ -305,6 +305,23 @@ speaks **TSPL**, not YPL. One vendor ships both protocols.
 The BLE service `18f0` with `2af1`/`2af0` is likewise a generic Chinese BLE
 printer service used by many unrelated devices. It does not imply YPL.
 
+**The manufacturer is Xiamen Print Future Technology Co., Ltd.** (`futureprt.com`),
+which publishes both driver apps on Google Play: **FlashLabel Pro** (drives the
+Y50P) and **FlashToy** (drives the U8). Their FCC grantee code is **`2A6FW`**, so
+every device they certify carries an ID of the form `2A6FW-<model>`, which makes
+the FCC database a public index of the catalogue. Models certified under it
+include `Y50P`, `U8`, `A80`, `C80`, `M50`, `S1`, `Y12P`, `Y41`, `Y813BT` and
+`L11`; their own site additionally lists `Y8`, `C80S`, `C80Y`, `Y812` and `D1`,
+spanning label makers, 80 mm units, A4 mobile printers and tattoo stencil
+printers.
+
+⚠️ **Sharing a manufacturer does not mean sharing a protocol.** `2A6FW-Y41` is
+certified by this same company, yet the KNAON **Y41BT** was independently found
+to speak **TSPL** (see `cbiffle/raster-tspl-rs` issue 2, where a USB capture
+shows plain `SIZE`/`GAP`/`BITMAP` commands). One ODM, two protocol families.
+Treat the catalogue as a list of _candidates_, never as a compatibility list —
+the wire format below is the only thing that settles it.
+
 **A reliable test.** Any of these settles it in seconds:
 
 1. Does the vendor's Android app ship `libdnInkPrinter.so` / `com.j0data.sdk`?
