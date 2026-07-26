@@ -315,6 +315,20 @@ include `Y50P`, `U8`, `A80`, `C80`, `M50`, `S1`, `Y12P`, `Y41`, `Y813BT` and
 spanning label makers, 80 mm units, A4 mobile printers and tattoo stencil
 printers.
 
+They are an OEM/ODM supplier, not only a brand: alongside finished printers they
+sell **print mechanisms and printer control boards**, advertise "one-stop
+OEM/ODM customization" against more than 100 complete-machine moulds, and export
+over 95% of output to 100+ countries. So the firmware travels into products from
+companies with no connection to them at all — which is the mechanism behind the
+white-labelling, and the reason a brand name can never identify this protocol.
+The candidate pool is wider than their own catalogue.
+
+The same breadth cuts the other way. They are also an Apple MFi manufacturer and
+claim to be the first Chinese thermal printer maker certified for **AirPrint** —
+which is IPP over Wi-Fi, a published standard and nothing like YPL. Between
+AirPrint, TSPL on the Y41, and YPL here, one supplier spans three unrelated
+protocol worlds.
+
 **The driver app is a better filter than the manufacturer.** The vendor lists a
 companion app per product, and that is a much tighter signal than the FCC
 grantee code: a device sold as driven by **FlashLabel** or **FlashToy** is
