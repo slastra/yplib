@@ -347,6 +347,17 @@ and companion app have each been tried and each covers both protocol families.
 Nothing about a device's packaging, listing or software identifies YPL. Only the
 bytes on the wire do.
 
+**A device may not speak one protocol on every transport.** The Y50P does — the
+same bytes work over USB, SPP and BLE — but that is one device, and it should
+not be generalised. Both TSPL results in this family come from **USB captures
+only**: the Y41BT via a Windows USB snoop, and the Y813BT the same way. Neither
+rules out YPL over Bluetooth on that hardware, and exposing TSPL on USB so
+generic drivers work while the vendor app uses something else over BLE would be
+an ordinary thing to do. The one firm counter-example is the CTP800, which does
+speak TSPL over SPP, so transport-dependent behaviour is not universal either.
+
+Test each transport you actually intend to use.
+
 **A reliable test.** Any of these settles it in seconds:
 
 1. Does the vendor's Android app ship `libdnInkPrinter.so` / `com.j0data.sdk`?
