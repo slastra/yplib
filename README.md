@@ -123,6 +123,15 @@ printers that speak TSPL instead). What settles it is the wire format:
 
 `reference/parse_frames.py` answers that question directly against a capture.
 
+**Frames starting `55 55`? That is a NIIMBOT**, a different protocol entirely:
+one-byte XOR checksum instead of CRC-32, the command in the frame header rather
+than the payload, and a bit-packed raster that repeats identical rows instead of
+run-length coding within one. Nothing here will help you.
+[niimbluelib](https://github.com/MultiMote/niimbluelib) covers that family
+properly, across six model dialects, and
+[niimblue](https://github.com/MultiMote/niimblue) is a browser designer built on
+it.
+
 ## Development
 
 ```bash
