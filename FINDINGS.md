@@ -283,6 +283,7 @@ Known members so far:
 | model       | brand                  | BLE profile        | evidence                       |
 | ----------- | ---------------------- | ------------------ | ------------------------------ |
 | **Y50P**    | KNAON                  | `18F0` / 2AF1+2AF0 | this repo, hardware-verified   |
+| **Y50**     | KNAON                  | —                  | user report (BT), issue #1     |
 | **U8**      | FlashToy (`knaon.com`) | `FF00` + FF03 flow | prior art, hardware-tested     |
 | R4xx family | —                      | —                  | prior art, reference work only |
 | R8 family   | —                      | —                  | prior art, partial research    |

@@ -84,7 +84,7 @@ describe('discovery', () => {
 		const { requested } = fakeStack();
 		await connect();
 		const opts = requested[0] as { filters: { namePrefix: string }[]; optionalServices: number[] };
-		expect(opts.filters).toEqual([{ namePrefix: 'Y50P' }]);
+		expect(opts.filters).toEqual([{ namePrefix: 'Y50' }]);
 		expect(JSON.stringify(opts.filters)).not.toContain('services');
 		// the service is still declared, just not used to filter
 		expect(opts.optionalServices).toEqual([0x18f0]);

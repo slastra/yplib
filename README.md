@@ -83,7 +83,7 @@ Pure. Runs in browsers, Node, Bun and Deno alike, with no dependencies.
 ### Transport — `@slastra/yplib/web-bluetooth`
 
 `connect(options?)` returns a `Link` with `send`, `readStatus`, `disconnect` and
-`deviceName`. Options: `namePrefix` (default `'Y50P'`), `chunkSize` (20),
+`deviceName`. Options: `namePrefix` (default `'Y50'`, which matches the Y50 and Y50P), `chunkSize` (20),
 `paceMs` (8), `statusTimeoutMs` (500), `onDisconnect`.
 
 `isSupported()` checks both requirements at once; `hasBluetooth()` and
@@ -113,6 +113,9 @@ USB, classic Bluetooth SPP and BLE. Other media heights are safe, because the
 protocol never transmits height: the printer takes rows until the raster ends.
 Widths other than 50 mm follow the captured frame format but are untested on
 real stock.
+
+The **KNAON Y50** is reported working over Bluetooth by a user
+([#1](https://github.com/slastra/yplib/issues/1)); it has not been on this bench.
 
 The hardware is white-labelled, so the badge on the case is not the giveaway,
 and neither is the USB vendor ID (`0x5958` is unregistered and shared with

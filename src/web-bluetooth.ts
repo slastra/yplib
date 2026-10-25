@@ -8,7 +8,8 @@ const NOTIFY_UUID = 0x2af0;
 export interface ConnectOptions {
 	/**
 	 * Device name prefix to match. The hardware is white-labelled, so this is
-	 * the knob to turn for a sibling model: 'Y50P', 'U8', and so on.
+	 * the knob to turn for a sibling model: 'U8', and so on. The default 'Y50'
+	 * matches both the Y50 and the Y50P.
 	 */
 	namePrefix?: string;
 	/** Bytes per GATT write. 20 fits the 23-byte default ATT MTU. */
@@ -61,7 +62,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
  */
 export async function connect(options: ConnectOptions = {}): Promise<BluetoothLink> {
 	const {
-		namePrefix = 'Y50P',
+		namePrefix = 'Y50',
 		chunkSize = 20,
 		paceMs = 8,
 		statusTimeoutMs = 500,
